@@ -1,33 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="bg-gray-800 py-4">
+      <nav className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <a className="text-white text-lg font-semibold" href="#">Logo</a>
+          </div>
+          <div className="hidden md:block">
+            <ul className="space-x-4">
+              <li>
+                <a className="text-gray-300 hover:text-white" href="#">Home</a>
+              </li>
+              <li>
+                <a className="text-gray-300 hover:text-white" href="#">About</a>
+              </li>
+              <li>
+                <a className="text-gray-300 hover:text-white" href="#">Services</a>
+              </li>
+              <li>
+                <a className="text-gray-300 hover:text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div className="md:hidden">
+            <button className="text-gray-300 hover:text-white focus:outline-none">
+              <svg className="h-6 w-6" viewBox="0 0 24 24">
+                <path
+                  className="fill-current"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
     </>
   )
 }
