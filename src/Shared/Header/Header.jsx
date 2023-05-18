@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import logo from '../../assets/turbo toys.png';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
+
+    const {user, userLogOut} = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        userLogOut()
+            .then(() => {
+            console.log('user successfully logged out')
+            })
+        .catch(err => console.error(err.message))
+    }
 
     const navigation =
         <>
@@ -40,7 +52,10 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'><a className="btn btn-primary text-white hover:text-gray-200 ">Login</a></Link>
+                {user?.uid ?
+                    <Link><button onClick={handleLogOut} className="btn btn-primary text-white hover:text-gray-200 ">Log Out</button></Link>:
+                    <Link to='/login'><a className="btn btn-primary text-white hover:text-gray-200 ">Login</a></Link>
+                }
             </div>
         </div>
     );
