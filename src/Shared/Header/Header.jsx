@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../../assets/turbo toys.png'
 
 
 const Header = () => {
@@ -24,8 +25,14 @@ const Header = () => {
                         {navigation}
                     </ul>
                 </div>
+
                 <Link to='/'>
-                    <a className="normal-case text-3xl font-semibold"><span className="text-primary">Turbo</span> Toys</a>
+                    <div className="avatar">
+                        <div className="w-28 rounded-full mr-4">
+                            <img src={logo} />
+                        </div>
+                    </div>
+
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
