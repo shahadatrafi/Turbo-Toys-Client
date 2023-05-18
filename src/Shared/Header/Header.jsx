@@ -5,14 +5,14 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
 
-    const {user, userLogOut} = useContext(AuthContext)
+    const { user, userLogOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
         userLogOut()
             .then(() => {
-            console.log('user successfully logged out')
+                console.log('user successfully logged out')
             })
-        .catch(err => console.error(err.message))
+            .catch(err => console.error(err.message))
     }
 
     const navigation =
@@ -53,7 +53,13 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {user?.uid ?
-                    <Link><button onClick={handleLogOut} className="btn btn-primary text-white hover:text-gray-200 ">Log Out</button></Link>:
+                    <>
+                        <div className="avatar mr-6 tooltip tooltip-left" data-tip={user?.displayName}>
+                            <div className="w-12 rounded-full " >
+                                <img src={user.photoURL} />
+                            </div>
+                        </div>
+                        <Link><button onClick={handleLogOut} className="btn btn-primary text-white hover:text-gray-200 ">Log Out</button></Link></> :
                     <Link to='/login'><a className="btn btn-primary text-white hover:text-gray-200 ">Login</a></Link>
                 }
             </div>
