@@ -5,7 +5,7 @@ const Header = () => {
 
     const navigation =
         <>
-            <li><Link>Home</Link></li>
+            <li><Link to='/'>Home</Link></li>
             <li><Link>All Toys</Link></li>
             <li><Link>My Toys</Link></li>
             <li><Link>Add A Toy</Link></li>
@@ -24,7 +24,7 @@ const Header = () => {
                         {navigation}
                     </ul>
                 </div>
-                <Link>
+                <Link to='/'>
                     <a className="normal-case text-3xl font-semibold"><span className="text-primary">Turbo</span> Toys</a>
                 </Link>
             </div>
@@ -34,7 +34,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link><a className="btn btn-primary text-white hover:text-gray-200 ">Login</a></Link>
+                <Link to='/login'><a className="btn btn-primary text-white hover:text-gray-200 ">Login</a></Link>
             </div>
         </div>
     );
