@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../assets/turbo toys.png'
-
+import logo from '../../assets/turbo toys.png';
 
 const Header = () => {
 
