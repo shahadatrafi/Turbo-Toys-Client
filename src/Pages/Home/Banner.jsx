@@ -4,8 +4,8 @@ import bannerImg from '../../assets/banner.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero h-[250px] md:h-[650px] object-cover" style={{ backgroundImage: `url(${bannerImg})` }}>
-            <div className="hero-overlay bg-opacity-70"></div>
+        <div className="hero h-[250px] md:h-[650px] object-cover rounded-xl" style={{ backgroundImage: `url(${bannerImg})` }}>
+            <div className="hero-overlay bg-opacity-70 rounded-xl"></div>
             <div className="hero-content w-full text-neutral-content">
                 <div className='w-full ps-4 md:ps-16'>
                     <h3 className='text-xl font-bold mb-3 text-purple-300'>For Your Little Champs</h3>
