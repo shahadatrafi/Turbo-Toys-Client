@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle, FaFacebookF } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
+
+    const { userSignUp } = useContext(AuthContext);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -12,14 +16,30 @@ const Registration = () => {
         const password = form.password.value;
         const photo = form.photo.value;
 
-        const user = {
+        const newUser = {
             name,
             email,
             password,
             photo
         }
 
-        console.log(user);
+        
+        userSignUp(email, password)
+            .then(res => {
+                const loggedUser = res.user;
+                console.log(loggedUser);
+                updateProfile(loggedUser, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                    .then(() => {
+                    console.log('Profile Updated')
+                    })
+                    .catch(err => {
+                        console.error(err.message)
+                    })
+            })
+            .catch(err => console.error(err.message));
 
     };
 
