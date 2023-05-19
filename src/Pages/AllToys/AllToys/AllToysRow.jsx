@@ -7,10 +7,10 @@ const AllToysRow = ({ toy }) => {
 
     return (
         <tr>
-            <th><div className="font-bold">{seller}</div></th>
+            <th><div className="font-semibold">{seller}</div></th>
             <td>
                 <div>
-                    <div className="font-bold">{ name}</div>
+                    <div className="font-semibold">{ name}</div>
                 </div>
             </td>
             <td>

@@ -43,7 +43,6 @@ const AllToys = () => {
                             <AllToysRow key={toy._id} toy={toy} />
                         ))}
                     </tbody>
-                    {/* foot */}
                 </table>
             </div>
         </div>
