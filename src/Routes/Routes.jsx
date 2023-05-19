@@ -3,6 +3,12 @@ import Main from "../layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import PrivateRoutes from "./PrivateRoutes";
+import AllToys from "../Pages/AllToys/AllToys/AllToys";
+import MyToys from "../Pages/MyToys/MyToys";
+import AddToy from "../Pages/AddToy/AddToy";
+import Blogs from "../Pages/Blogs/Blogs";
+
 
 const router = createBrowserRouter([
     {
@@ -20,6 +26,23 @@ const router = createBrowserRouter([
             {
                 path: '/sign-up',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/all-toy',
+                element: <AllToys></AllToys>,
+                loader: ()=> fetch(`http://localhost:5000/toys`)
+            },
+            {
+                path: '/my-toys',
+                element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
+            },
+            {
+                path: '/add-toy',
+                element: <AddToy></AddToy>
+            },
+            {
+                path: '/blog',
+                element: <Blogs></Blogs>
             }
 
         ]

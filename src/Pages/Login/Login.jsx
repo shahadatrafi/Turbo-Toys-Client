@@ -1,10 +1,15 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle, FaFacebookF } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
+
+    let navigate = useNavigate();
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || '/';
 
     const { userLogin } = useContext(AuthContext);
 
@@ -18,6 +23,7 @@ const Login = () => {
             .then(res => {
                 const loggedUser = res.user
                 console.log(loggedUser)
+                navigate(from, {replace: true})
             })
             .catch(err => console.error(err.message))
         

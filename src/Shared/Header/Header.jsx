@@ -18,10 +18,12 @@ const Header = () => {
     const navigation =
         <>
             <li><Link to='/'>Home</Link></li>
-            <li><Link>All Toys</Link></li>
-            <li><Link>My Toys</Link></li>
-            <li><Link>Add A Toy</Link></li>
-            <li><Link>Blogs</Link></li>
+            <li><Link to='/all-toy'>All Toys</Link></li>
+            {user && <>
+                <li><Link to='/my-toys'>My Toys</Link></li>
+                <li>
+                    <Link to='/add-toy'>Add A Toy</Link></li></>}
+            <li><Link to='/blog'>Blogs</Link></li>
 
         </>
 
