@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PoliceCarCard from './PoliceCarCard';
 import RegularCarCard from './RegularCarCard';
+import SportsCarCard from './SportsCarCard';
 
 const ShopByCategory = () => {
 
@@ -37,7 +38,7 @@ const ShopByCategory = () => {
                 <h1 className="text-5xl font-bold mb-12">Shop By Category</h1>
             </div>
             <Tabs>
-                <TabList>
+                <TabList className='text-xl font-semibold'>
                     <Tab>Police cars</Tab>
                     <Tab>Regular cars</Tab>
                     <Tab>Sports cars</Tab>
@@ -68,7 +69,16 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Content for Tab 3</h2>
+                <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
+                    {
+                        sportsCars.map(sportsCar => <SportsCarCard
+                            key={sportsCar._id}
+                            sportsCar={sportsCar}
+                        >
+
+                        </SportsCarCard>)
+                    }
+                    </div>
                 </TabPanel>
             </Tabs>
         </div>
