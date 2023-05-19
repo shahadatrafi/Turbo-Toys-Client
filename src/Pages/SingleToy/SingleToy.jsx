@@ -8,13 +8,16 @@ const SingleToy = () => {
     const { _id, pictureUrl, name, subcategory, price, rating, quantity, description, seller, sellerEmail } = toy
 
     return (
-        <div className="hero my-16">
+        <div>
+            <h1 className="text-5xl my-8 text-center font-bold">Shop </h1>
+            <div className="hero my-14">
+            
             <div className="hero-content flex-col lg:flex-row gap-16">
                 <div className='max-w-xl'>
                     <img className='w-full rounded-2xl' src={pictureUrl} />
                 </div>
                 <div>
-                    <h1 className="text-5xl font-bold">{name}</h1>
+                    <h1 className="text-4xl font-bold">{name}</h1>
                     <p className='font-semibold py-4 text-xl'>Rating: <span className='text-primary'>{rating}</span></p>
                     <div className="divider"></div>
                     <p className='font-semibold py-2 text-xl'>Price: <span className='text-primary'>${price}</span></p>
@@ -28,6 +31,7 @@ const SingleToy = () => {
 
                 </div>
             </div>
+        </div>
         </div>
     );
 };

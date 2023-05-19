@@ -14,7 +14,7 @@ const AllToys = () => {
     return (
         <div>
             <div className='text-center'>
-                <h1 className="text-5xl font-bold mb-12">All Toys Here </h1>
+                <h1 className="text-5xl font-bold my-8">All Toys Here </h1>
             </div>
             <div className="text-right my-4">
             <input className="input input-bordered w-full max-w-xs"
