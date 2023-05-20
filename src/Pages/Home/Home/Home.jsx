@@ -1,3 +1,4 @@
+import ClientFeedback from "../ClientFeadback";
 import Gallery from "../Gallery";
 import ShopByCategory from "../ShopByCategory";
 import WhyWe from "../WhyWe";
@@ -11,6 +12,7 @@ const Home = () => {
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
             <WhyWe></WhyWe>
+            <ClientFeedback></ClientFeedback>
         </div>
     );
 };

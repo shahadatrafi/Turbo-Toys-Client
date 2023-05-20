@@ -5,7 +5,7 @@ import { FaChartLine, FaShuttleVan, FaSmile } from 'react-icons/fa';
 
 const WhyWe = () => {
     return (
-        <section className="py-1 mb-28">
+        <section className="py-1 mb-24">
             <div className="container mx-auto">
                 <h2 className="text-5xl font-bold mb-14 text-center">Why Choose Us</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
