@@ -13,7 +13,7 @@ const MyToys = () => {
     const [sortOrder, setSortOrder] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys?email=${user.email}`)
+        fetch(`https://turbo-toys-server.vercel.app/toys?email=${user.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, []);
@@ -36,7 +36,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/${id}`, {
+                fetch(`https://turbo-toys-server.vercel.app/toys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -68,7 +68,7 @@ const MyToys = () => {
             {/* sorting */}
             <div className="text-right my-4">
             <select className="select select-bordered w-full max-w-xs">
-                <option disabled selected>Sort By Price</option>
+                <option disabled value={sortOrder}>Sort By Price</option>
                 <option>Lowest</option>
                 <option>Heights</option>
             </select>

@@ -36,7 +36,7 @@ const AddToy = () => {
         console.log(newToy)
 
 
-        fetch(`http://localhost:5000/toys`, {
+        fetch(`https://turbo-toys-server.vercel.app/toys`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

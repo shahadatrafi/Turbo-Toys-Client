@@ -27,7 +27,7 @@ const SingleToy = () => {
                     <p className='font-semibold py-2 text-xl'>Quantity In Stock: <span className='text-primary '>{quantity}</span></p>
                     <p className="py-6 "><span className='font-semibold'>Description:</span> {description}</p>
 
-                    {seller && <div className='flex justify-between'>
+                    {seller && <div className='flex justify-between gap-10'>
                     <p className='py-2'><span className='font-semibold'>Seller:</span> <span >{seller}</span></p>
                     <p className='py-2'><span className='font-semibold'>Seller Email:</span> <span >{sellerEmail}</span></p>
                     </div>}

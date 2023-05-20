@@ -7,7 +7,7 @@ import logo from '../../assets/turbo toys.png'
 const Footer = () => {
     return (
         <footer className="footer p-10 ps-2 bg-base-100  text-base-content">
-            <div>
+            <div className=" ml-10 md:ml-0">
                 <Link to='/'>
                     <div className="avatar">
                         <div className="w-28 rounded-full">
@@ -22,7 +22,7 @@ const Footer = () => {
                     <Link><FaLinkedin></FaLinkedin></Link>
                 </div>
             </div>
-            <div>
+            <div className=" ml-10 md:ml-0">
                 <span className="footer-title">Services</span>
                 <ul>
                     <li className="my-2"><Link >Home</Link></li>
@@ -31,7 +31,7 @@ const Footer = () => {
                     <li className="my-2"><Link >Specials Offers</Link></li>
                 </ul>
             </div>
-            <div>
+            <div className=" ml-10 md:ml-0">
                 <span className="footer-title">Company</span>
                 <ul>
                     <li className="my-2"><Link>About us</Link></li>
@@ -40,7 +40,7 @@ const Footer = () => {
                     <li className="my-2"><Link>Delivery Information</Link></li>
                 </ul>
             </div>
-            <div>
+            <div className=" ml-10 md:ml-0">
                 <span className="footer-title">Contact Us</span>
                 <ul>
                     <li className="my-2 flex items-center gap-2"><FaMapMarkerAlt className="text-xl text-primary"></FaMapMarkerAlt><Link>129 Street, San Francisco, CA <br></br>94110 Unicon Center, US</Link></li>

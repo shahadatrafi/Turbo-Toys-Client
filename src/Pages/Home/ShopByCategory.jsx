@@ -27,19 +27,19 @@ const ShopByCategory = () => {
     const [policeCars, setPoliceCars] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys/regular-car')
+        fetch('https://turbo-toys-server.vercel.app/toys/regular-car')
             .then(res => res.json())
             .then(data => setRegularCars(data))
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys/sports-car')
+        fetch('https://turbo-toys-server.vercel.app/toys/sports-car')
             .then(res => res.json())
             .then(data => setSportsCars(data))
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys/police-car')
+        fetch('https://turbo-toys-server.vercel.app/toys/police-car')
             .then(res => res.json())
             .then(data => setPoliceCars(data))
     }, []);
