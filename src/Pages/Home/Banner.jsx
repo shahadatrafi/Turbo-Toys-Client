@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 import bannerImg from '../../assets/banner.jpg'
 
 const Banner = () => {
+
+    useEffect(() => {
+        Aos.init({
+            offset: 200,
+            duration: 800,
+        })
+    },[])
+
+
     return (
-        <div className="hero h-[250px] md:h-[650px] object-cover rounded-xl" style={{ backgroundImage: `url(${bannerImg})` }}>
+        <div className="hero h-[250px] md:h-[650px] object-cover rounded-xl" style={{ backgroundImage: `url(${bannerImg})` }} data-aos="fade-right">
             <div className="hero-overlay bg-opacity-70 rounded-xl"></div>
             <div className="hero-content w-full text-neutral-content">
                 <div className='w-full ps-4 md:ps-16'>

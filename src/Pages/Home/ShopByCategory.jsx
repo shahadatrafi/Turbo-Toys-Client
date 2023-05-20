@@ -7,8 +7,17 @@ import SportsCarCard from './SportsCarCard';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 const ShopByCategory = () => {
+
+    useEffect(() => {
+        Aos.init({
+            offset: 200,
+            duration: 800,
+        })
+    },[])
 
     const { user, loading } = useContext(AuthContext);
     console.log(user);
@@ -44,7 +53,7 @@ const ShopByCategory = () => {
 
 
     return (
-        <div className='text-center my-28'>
+        <div className='text-center my-28' data-aos="fade-right">
             <div className='text-center'>
                 <h1 className="text-5xl font-bold mb-12">Shop By Category</h1>
             </div>
@@ -56,7 +65,7 @@ const ShopByCategory = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
+                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3' data-aos="zoom-in">
                         {
                             policeCars.map(policeCar => <PoliceCarCard
                                 key={policeCar._id}
@@ -69,7 +78,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
+                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3' data-aos="zoom-in">
                         {
                             regularCars.map(regularCar => <RegularCarCard
                                 key={regularCar._id}
@@ -82,7 +91,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
+                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3' data-aos="zoom-in">
                         {
                             sportsCars.map(sportsCar => <SportsCarCard
                                 key={sportsCar._id}

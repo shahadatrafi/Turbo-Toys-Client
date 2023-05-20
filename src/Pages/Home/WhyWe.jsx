@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '../../assets/collectionToy.avif'
 import { FaChartLine, FaShuttleVan, FaSmile } from 'react-icons/fa';
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 
 const WhyWe = () => {
+
+    useEffect(() => {
+        Aos.init({
+            offset: 200,
+            duration: 800,
+        })
+    },[])
+
     return (
-        <section className="py-1 mb-24">
+        <section className="py-1 mb-24" data-aos="fade-left">
             <div className="container mx-auto">
                 <h2 className="text-5xl font-bold mb-14 text-center">Why Choose Us</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-8">
+                    <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-8" data-aos="zoom-in">
                         <figure className=''><FaShuttleVan className='text-6xl '></FaShuttleVan></figure>
                         <div className="card-body">
                             <h2 className="card-title">Free Delivery</h2>
@@ -17,7 +27,7 @@ const WhyWe = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-8">
+                    <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-8" data-aos="zoom-in">
                         <figure className=''><FaChartLine className='text-6xl '></FaChartLine></figure>
                         <div className="card-body">
                             <h2 className="card-title">Quality Assurance</h2>
@@ -25,7 +35,7 @@ const WhyWe = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-8">
+                    <div className="card w-96 bg-base-100 shadow-xl mx-auto mb-8" data-aos="zoom-in">
                         <figure className=''><FaSmile className='text-6xl '></FaSmile></figure>
                         <div className="card-body">
                             <h2 className="card-title">Exceptional Service</h2>
