@@ -7,7 +7,7 @@ const RegularCarCard = ({regularCar}) => {
 
 
     return (
-        <div className="card w-96 glass shadow-lg hover:shadow-2xl duration-500">
+        <div className="card w-96 glass shadow-lg mx-auto mb-8 hover:shadow-2xl duration-500">
             <figure><img className='h-[250px] w-full'  src={pictureUrl} alt="car!" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl">{name}</h2>

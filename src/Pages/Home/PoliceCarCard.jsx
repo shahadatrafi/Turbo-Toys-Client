@@ -6,7 +6,7 @@ const PoliceCarCard = ({ policeCar }) => {
     const { _id, name, pictureUrl, price, rating, } = policeCar;
 
     return (
-        <div className="card w-96 glass shadow-lg hover:shadow-2xl duration-500">
+        <div className="card w-96 glass mx-auto mb-8 shadow-lg hover:shadow-2xl duration-500">
         <figure><img className='h-[250px] w-full' src={pictureUrl} alt="car!" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl">{name}</h2>

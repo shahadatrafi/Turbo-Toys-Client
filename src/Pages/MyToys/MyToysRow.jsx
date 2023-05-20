@@ -10,11 +10,11 @@ const MyToysRow = ({ myToy, handleDelete }) => {
             <th><div className="font-semibold">{seller}</div></th>
             <td>
                 <div className='flex items-center'>
-                    <div className="avatar">
+                    {pictureUrl && <div className="avatar">
                         <div className="w-24 rounded mr-4">
                             <img className='w-full' src={pictureUrl} alt="Tailwind-CSS-Avatar-component" />
                         </div>
-                    </div>
+                    </div>}
                     <div className="font-semibold">{name}</div>
                 </div>
             </td>

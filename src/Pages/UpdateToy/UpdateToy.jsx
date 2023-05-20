@@ -1,51 +1,48 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const UpdateToy = () => {
 
     const { user } = useContext(AuthContext);
+    const toy = useLoaderData();
+
+    const { rating, _id, price, quantity, description } = toy;
+
 
     const handleUpdateToy = e => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
-        const subcategory = form.subcategory.value;
-        const seller = user?.displayName
-        const sellerEmail = user?.email
+        
         const price = form.price.value;
         const quantity = form.quantity.value;
-        const rating = form.rating.value;
-        const pictureUrl = form.pictureUrl.value;
         const description = form.description.value;
 
-        const newToy = {
-            name,
-            subcategory,
-            seller,
-            sellerEmail,
+        const updatedToy = {
             price,
             quantity,
-            rating,
-            pictureUrl,
             description,
         };
 
-        console.log(newToy)
+        console.log(updatedToy)
 
 
-        fetch(`http://localhost:5000/toys`, {
-            method: "POST",
+        fetch(`http://localhost:5000/toys/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newToy)
+            body: JSON.stringify(updatedToy)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId) {
+                if (data.modifiedCount) {
                     Swal.fire(
                         'Good job!',
-                        'You Added the Toy!',
+                        'You Updated the Toy!',
                         'success'
                     )
                 };
@@ -56,7 +53,7 @@ const UpdateToy = () => {
 
     return (
         <div>
-            <h1 className="text-5xl text-center my-8 font-bold">Add Your Toy</h1>
+            <h1 className="text-5xl text-center my-8 font-bold">Update Your Toy</h1>
             <div className="card-body max-w-5xl mx-auto">
                 <form onSubmit={handleUpdateToy}>
                     
@@ -69,7 +66,7 @@ const UpdateToy = () => {
                             <input
                                 name="price"
                                 type="text"
-                                placeholder="Price"
+                                placeholder={price}
                                 className="input input-bordered"
                             />
                         </div>
@@ -78,9 +75,10 @@ const UpdateToy = () => {
                                 <span className="label-text">Rating</span>
                             </label>
                             <input
+                                readOnly
                                 name="rating"
                                 type="text"
-                                placeholder="Rating"
+                                placeholder={rating}
                                 className="input input-bordered"
                             />
                         </div>
@@ -91,7 +89,7 @@ const UpdateToy = () => {
                             <input
                                 name="quantity"
                                 type="text"
-                                placeholder="Available Quantity"
+                                placeholder={quantity}
                                 className="input input-bordered"
                             />
                         </div>
@@ -102,12 +100,12 @@ const UpdateToy = () => {
                         </label>
                         <textarea
                             name="description"
-                            placeholder="Description"
+                            placeholder={description}
                             className="textarea textarea-bordered h-32"
                         />
                     </div>
                     <div className="form-control mt-6">
-                        <input className="btn btn-primary text-white" type="submit" value="Add Toy" />
+                        <input className="btn btn-primary text-white" type="submit" value="Update Toy" />
                     </div>
                 </form>
             </div>

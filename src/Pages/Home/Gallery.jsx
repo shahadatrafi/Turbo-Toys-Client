@@ -18,12 +18,12 @@ const Gallery = () => {
             <div className='text-center'>
                 <h1 className="text-5xl font-bold mb-12">Our Gallary</h1>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid p-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="relative">
                     <img
                         src={img1}
                         alt="Image 1"
-                        className="w-full h-[250px] rounded-lg  transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg  transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -31,7 +31,7 @@ const Gallery = () => {
                     <img
                         src={img2}
                         alt="Image 2"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -39,7 +39,7 @@ const Gallery = () => {
                     <img
                         src={img3}
                         alt="Image 3"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -47,7 +47,7 @@ const Gallery = () => {
                     <img
                         src={img4}
                         alt="Image 3"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -55,7 +55,7 @@ const Gallery = () => {
                     <img
                         src={img5}
                         alt="Image 1"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -63,7 +63,7 @@ const Gallery = () => {
                     <img
                         src={img6}
                         alt="Image 2"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -71,7 +71,7 @@ const Gallery = () => {
                     <img
                         src={img7}
                         alt="Image 3"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -79,7 +79,7 @@ const Gallery = () => {
                     <img
                         src={img8}
                         alt="Image 3"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
@@ -87,7 +87,7 @@ const Gallery = () => {
                     <img
                         src={img9}
                         alt="Image 1"
-                        className="w-full h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
+                        className="w-full md:h-[250px] rounded-lg transform hover:rotate-6 transition duration-1000"
                     />
 
                 </div>
