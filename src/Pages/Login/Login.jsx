@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
+    useTitle('Login');
+    
     let navigate = useNavigate();
     let location = useLocation();
 

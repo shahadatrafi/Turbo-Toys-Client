@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import useTitle from '../../hooks/useTitle';
 
 const Registration = () => {
+
+    useTitle('Sign Up')
 
     const { userSignUp } = useContext(AuthContext);
 

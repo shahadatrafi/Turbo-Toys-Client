@@ -4,12 +4,13 @@ import Gallery from "../Gallery";
 import ShopByCategory from "../ShopByCategory";
 import WhyWe from "../WhyWe";
 import Banner from "../banner";
+import useTitle from "../../../hooks/useTitle";
 
 
 
 const Home = () => {
 
-    
+    useTitle('Home')
 
     return (
         <div>

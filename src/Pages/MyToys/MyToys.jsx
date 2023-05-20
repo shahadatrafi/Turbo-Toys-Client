@@ -2,17 +2,27 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
 
-    const [myToys, setMyToys] = useState([])
+    useTitle('My Toys')
+
+    const [myToys, setMyToys] = useState([]);
+    const [sortOrder, setSortOrder] = useState('');
 
     useEffect(() => {
         fetch(`http://localhost:5000/toys?email=${user.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, []);
+
+
+
+    const handleSortChange = (e) => {
+        setSortOrder(e.target.value);
+    };
 
     const handleDelete = id => {
 
@@ -39,9 +49,9 @@ const MyToys = () => {
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
-                              )
+                            )
                         }
-                        
+
                     })
             }
         })
@@ -52,6 +62,18 @@ const MyToys = () => {
 
     return (
         <div>
+            <div className='text-center'>
+                <h1 className="text-5xl font-bold my-8">My Toys Here </h1>
+            </div>
+            {/* sorting */}
+            <div className="text-right my-4">
+            <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>Sort By Price</option>
+                <option>Lowest</option>
+                <option>Heights</option>
+            </select>
+            </div>
+            {/* sorting */}
             <div className="overflow-x-auto w-full">
 
                 <table className="table w-full">
