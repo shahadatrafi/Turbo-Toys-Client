@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { FaGithub, FaGoogle, FaFacebookF } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';

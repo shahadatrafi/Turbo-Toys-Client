@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyToysRow = ({myToy}) => {
+const MyToysRow = ({ myToy, handleDelete }) => {
 
     const { _id, name, subcategory, price, quantity, seller, pictureUrl } = myToy;
 
@@ -27,7 +27,7 @@ const MyToysRow = ({myToy}) => {
                 <Link to={`${_id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
             </th>
             <th>
-                <button className="btn btn-ghost btn-xs">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
             </th>
         </tr>
     );
