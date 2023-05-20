@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PoliceCarCard from './PoliceCarCard';
 import RegularCarCard from './RegularCarCard';
 import SportsCarCard from './SportsCarCard';
+import { AuthContext } from '../../providers/AuthProvider';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ShopByCategory = () => {
+
+    const { user, loading } = useContext(AuthContext);
+    console.log(user);
 
     const [regularCars, setRegularCars] = useState([]);
     const [sportsCars, setSportsCars] = useState([]);
@@ -29,6 +35,11 @@ const ShopByCategory = () => {
             .then(data => setPoliceCars(data))
     }, []);
 
+    const handleViewDetails = () => {
+        if (!user) {
+            return Swal.fire('You have to log in first to view details')
+        }
+    }
 
 
 
@@ -46,38 +57,41 @@ const ShopByCategory = () => {
 
                 <TabPanel>
                     <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
-                    {
-                        policeCars.map(policeCar => <PoliceCarCard
-                            key={policeCar._id}
-                            policeCar={policeCar}
-                        >
+                        {
+                            policeCars.map(policeCar => <PoliceCarCard
+                                key={policeCar._id}
+                                policeCar={policeCar}
+                                handleViewDetails={handleViewDetails}
+                            >
 
-                        </PoliceCarCard>)
-                    }
+                            </PoliceCarCard>)
+                        }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
-                    {
-                        regularCars.map(regularCar => <RegularCarCard
-                            key={regularCar._id}
-                            regularCar={regularCar}
-                        >
+                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
+                        {
+                            regularCars.map(regularCar => <RegularCarCard
+                                key={regularCar._id}
+                                regularCar={regularCar}
+                                handleViewDetails={handleViewDetails}
+                            >
 
-                        </RegularCarCard>)
-                    }
+                            </RegularCarCard>)
+                        }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
-                    {
-                        sportsCars.map(sportsCar => <SportsCarCard
-                            key={sportsCar._id}
-                            sportsCar={sportsCar}
-                        >
+                    <div className='mt-16 text-left grid grid-cols-1 md:grid-cols-3'>
+                        {
+                            sportsCars.map(sportsCar => <SportsCarCard
+                                key={sportsCar._id}
+                                sportsCar={sportsCar}
+                                handleViewDetails={handleViewDetails}
+                            >
 
-                        </SportsCarCard>)
-                    }
+                            </SportsCarCard>)
+                        }
                     </div>
                 </TabPanel>
             </Tabs>

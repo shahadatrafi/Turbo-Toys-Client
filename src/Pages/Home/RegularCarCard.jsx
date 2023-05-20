@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RegularCarCard = ({regularCar}) => {
+const RegularCarCard = ({regularCar, handleViewDetails}) => {
 
     const { _id, name, pictureUrl, price, rating, } = regularCar;
 
@@ -14,7 +14,7 @@ const RegularCarCard = ({regularCar}) => {
                 <p className='font-semibold '>Price: <span className='text-primary'>${price}</span></p>
                 <p className='font-semibold '>Rating: <span className='text-primary'>{rating}</span></p>
                 <div className="card-actions justify-end">
-                    <Link><button className="btn btn-primary text-white">View Details</button></Link>
+                    <Link to={`all-toy/${_id}`}><button onClick={handleViewDetails} className="btn btn-primary text-white">View Details</button></Link>
                 </div>
             </div>
         </div>
