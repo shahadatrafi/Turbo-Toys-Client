@@ -10,19 +10,15 @@ const MyToys = () => {
     useTitle('My Toys')
 
     const [myToys, setMyToys] = useState([]);
-    const [sortOrder, setSortOrder] = useState('');
+    const [asc, setAsc] = useState(true);
 
     useEffect(() => {
-        fetch(`https://turbo-toys-server.vercel.app/toys?email=${user.email}`)
+        fetch(`https://turbo-toys-server.vercel.app/toys?email=${user.email}&sort=${asc ? 'asc' : 'desc'}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, []);
+    }, [asc]);
 
 
-
-    const handleSortChange = (e) => {
-        setSortOrder(e.target.value);
-    };
 
     const handleDelete = id => {
 
@@ -66,12 +62,11 @@ const MyToys = () => {
                 <h1 className="text-5xl font-bold my-8">My Toys Here </h1>
             </div>
             {/* sorting */}
-            <div className="text-right my-4">
-            <select className="select select-bordered w-full max-w-xs">
-                <option disabled value={sortOrder}>Sort By Price</option>
-                <option>Lowest</option>
-                <option>Heights</option>
-            </select>
+            <div className=" text-right mb-6">
+                <button
+                    className="btn btn-primary text-white"
+                    onClick={() => setAsc(!asc)}
+                >{asc ? 'Price: High to Low' : 'Price: Low to High'}</button>
             </div>
             {/* sorting */}
             <div className="overflow-x-auto w-full">
