@@ -6,7 +6,8 @@ import logo from '../../assets/turbo toys.png'
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 ps-2 bg-base-100  text-base-content">
+        <div>
+            <footer className="footer p-10 ps-2 bg-base-100  text-base-content">
             <div className=" ml-10 md:ml-0">
                 <Link to='/'>
                     <div className="avatar">
@@ -48,7 +49,11 @@ const Footer = () => {
                     <li className="my-2 flex items-center gap-2"><FaPhoneAlt className="text-xl text-primary"></FaPhoneAlt><Link>(+01) 123 456 7890</Link></li>
                 </ul>
             </div>
-        </footer>
+            </footer>
+            <p className=" text-center divider text-gray-600">
+            Copyright © 2023 Turbo Toys. All rights reserved.
+            </p>
+        </div>
     );
 };
 
